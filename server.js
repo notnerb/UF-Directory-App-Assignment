@@ -8,7 +8,7 @@ var listingData, server;
 
 var requestHandler = function(request, response) {
   var parsedUrl = url.parse(request.url);
-  if(request.method == 'GET' && parsedURL.pathname == '/listings'){
+  if(request.method == 'GET' && parsedUrl.pathname == '/listings'){
   	response.writeHead(200,{'Content-Type':'application/json'});
   	response.end(listingData);
   }
