@@ -8,6 +8,7 @@ var listingData, server;
 
 var requestHandler = function(request, response) {
   var parsedUrl = url.parse(request.url);
+  if(request.method == GET &&)
 
   /*
     Your request handler should send listingData in the JSON format if a GET request 
