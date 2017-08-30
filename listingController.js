@@ -1,7 +1,7 @@
 angular.module('listings').controller('ListingsController', ['$scope', 'Listings', 
   function($scope, Listings) {
     $scope.listings = Listings;
-    $scope.detailedInfo = undefined;
+    $scope.detailedInfo = 'Click on a entry name for more info';
 
     /* 
       Implement these functions in the controller to make your application function 
