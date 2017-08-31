@@ -30,9 +30,6 @@
               <tr ng-repeat = "listing in listings" ng-click = "showDetails($index)">
               <td>{{listing.code}}</td>
               <td>{{listing.name}}</td>
-
-
-                
               </tr>
               <!-- 
 
@@ -42,7 +39,14 @@
 
                 --> 
             </table>
+            <br>
           </div>
+            <form>
+            <br>
+              <input type="text" name="entry" value="Type the name of the entry here">
+
+
+            </form>
           <!-- 
 
               Write an HTML form that adds new listings to the directory 
@@ -52,13 +56,18 @@
         <div class="col-md-6">
           <div class="jumbotron">
             <h2>Detailed Information</h2>
-            <p>{{detailedInfo}}</p>
-            <!-- 
-            
-              Include a way to display detailed information about an individual listing:
-                   * consider how to use ng-click within the the table to implement this feature
+            <div class = "moreDetails" ng-show = "showInfo">
+              <p>Address: {{detailedInfo.address}}</p>
+              <p>Latitude: {{detailedInfo.coordinates.latitude}}</p>
+              <p>Longtitude: {{detailedInfo.coordinates.longitude}}</p>
 
-             -->
+              <!-- 
+              
+                Include a way to display detailed information about an individual listing:
+                     * consider how to use ng-click within the the table to implement this feature
+
+               -->
+             </div>
           </div>
         </div>
       </div>
