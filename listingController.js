@@ -5,6 +5,7 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
     $scope.showInfo = false; 
     $scope.newItem = "";
     $scope.newItemCode = "";
+    $scope.searchTerm = "";
 
     /* 
       Implement these functions in the controller to make your application function 
