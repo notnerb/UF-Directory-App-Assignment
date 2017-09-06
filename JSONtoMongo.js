@@ -22,7 +22,7 @@ mongoose.connect('mongodb://test:1234@ds123084.mlab.com:23084/learning_mongo');
     var newListing = new Listing(entry);
 
     newListing.save(function(err, data){
-        console.log(data);
+        
     });
   });
  });
