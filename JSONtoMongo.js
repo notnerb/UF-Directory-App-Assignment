@@ -10,7 +10,7 @@ var fs = require('fs'),
     config = require('./config.js');
 
 /* Connect to your database */
-mongoose.connect('mongodb://test:1234@ds123084.mlab.com:23084/learning_mongo', function(err, db){
+mongoose.connect('mongodb://test:1234@ds123084.mlab.com:23084/learning_mongo');
 
 /* 
   Instantiate a mongoose model for each listing object in the JSON file, 
@@ -21,10 +21,11 @@ mongoose.connect('mongodb://test:1234@ds123084.mlab.com:23084/learning_mongo', f
   listings.forEach(function(entry){
     var newListing = new Listing(entry);
 
-    db.listings.insertOne(newListing);
+    newListing.save(function(err, data){
+        console.log(data);
+    });
   });
  });
-});
 
 
 /* 
