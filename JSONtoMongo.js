@@ -16,7 +16,7 @@ mongoose.connect('mongodb://test:1234@ds123084.mlab.com:23084/learning_mongo');
   Instantiate a mongoose model for each listing object in the JSON file, 
   and then save it to your Mongo database 
  */
- fs.readFile('listings.json', 'utf8', function (err, data){
+ fs.readFile('listings.json', 'utf8', function(err, data){
   var listings = JSON.parse(data).entries;
   listings.forEach(function(entry){
     var newListing = new Listing(entry);
@@ -25,7 +25,9 @@ mongoose.connect('mongodb://test:1234@ds123084.mlab.com:23084/learning_mongo');
         
     });
   });
+  
  });
+
 
 
 /* 

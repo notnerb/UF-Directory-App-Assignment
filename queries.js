@@ -21,7 +21,9 @@ var removeCable = function() {
    Listing.findOne({code: "CABL"}, function(err, listing){
     if (err) throw err;
     console.log (listing);
+    if(listing!=null){
     listing.remove();
+    }
    });
 
 };
@@ -30,8 +32,8 @@ var updatePhelpsLab = function() {
     Phelps Laboratory's address is incorrect. Find the listing, update it, and then 
     log the updated document to the console. 
    */
-  Listing.findOneAndUpdate({ username: 'starlord55' }, { username: 'starlord88' }, function(err, listing) {
-    if (err) throw err;
+  Listing.findOne({ code: 'PHL' },function(err, listing) {
+    listing.address = "Phelps Lab, Gainesville, FL 32603"
 
   // we have the updated user returned to us
     console.log(listing);
@@ -41,10 +43,15 @@ var retrieveAllListings = function() {
   /* 
     Retrieve all listings in the database, and log them to the console. 
    *////
-   process.exit();
+   Listing.find({}, function(err, listings){
+    console.log(listings);
+
+   });
+
 };
 
 findLibraryWest();
 removeCable();
 updatePhelpsLab();
 retrieveAllListings();
+process.exit
