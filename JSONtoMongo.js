@@ -20,8 +20,8 @@ mongoose.connect('mongodb://test:1234@ds123084.mlab.com:23084/learning_mongo');
   var listings = JSON.parse(data);
   for(var i in listings){
     var newListing = new Listing({
-      name: listings[i].name;
-    })
+      name: listings[i].name
+    });
 
     
   };
