@@ -17,17 +17,12 @@ mongoose.connect('mongodb://test:1234@ds123084.mlab.com:23084/learning_mongo');
   and then save it to your Mongo database 
  */
  fs.readFile('listings.json', 'utf8', function (err, data){
-  var listings = JSON.parse(data);
-  for(var listing in listings){
-    var newListing = new Listing({
-      name: "listing.name",
-      code: "listing.code"
-    });
+  var listings = JSON.parse(data).entries;
+  listings.forEach(function(entry){
+    var newListing = new Listing(entry);
 
-    newListing.save(function(err, data){
-        console.log(data);
-    });
-  };
+    db.listings.insertOne(newListing);
+  });
  });
 
 
