@@ -7,8 +7,8 @@ mongoose.connect('mongodb://test:1234@ds123084.mlab.com:23084/learning_mongo');
 /* Create your schema */
 var listingSchema = new Schema({
   /* your code here */
-  name: String,
-  code: String,
+  name: {type: String, required: true},
+  code: {type: String, required: true},
   coordinates: {
   	latitude: Number,
   	longitude: Number
