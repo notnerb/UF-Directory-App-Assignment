@@ -18,9 +18,10 @@ mongoose.connect('mongodb://test:1234@ds123084.mlab.com:23084/learning_mongo');
  */
  fs.readFile('listings.json', 'utf8', function (err, data){
   var listings = JSON.parse(data);
-  listings.forEach(function(listing)){
+  for(var listing in listings){
     var newListing = new Listing({
-      name: listing.name
+      name: listing.name,
+      code: listing.code
     });
 
     newListing.save(function(err, data){
