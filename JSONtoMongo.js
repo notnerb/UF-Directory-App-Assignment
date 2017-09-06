@@ -16,9 +16,8 @@ mongoose.connect('mongodb://test:1234@ds123084.mlab.com:23084/learning_mongo');
   Instantiate a mongoose model for each listing object in the JSON file, 
   and then save it to your Mongo database 
  */
- fs.readFileAsync('listings.json', 'utf8')
- .then(function (resolve, reject){
-  var listings = JSON.parse(resolve);
+ fs.readFile('listings.json', 'utf8', function (err, data){
+  var listings = JSON.parse(data);
   listings.forEach(function(listing){
     
 
