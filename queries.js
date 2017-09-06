@@ -18,7 +18,7 @@ var removeCable = function() {
     on cable TV. Since we live in the 21st century and most courses are now web based, go ahead
     and remove this listing from your database and log the document to the console. 
    */
-   Listing.find({code: "CABL"}, function(err, listing){
+   Listing.findOne({code: "CABL"}, function(err, listing){
     if (err) throw err;
     console.log (listing);
     listing.remove();
@@ -30,11 +30,18 @@ var updatePhelpsLab = function() {
     Phelps Laboratory's address is incorrect. Find the listing, update it, and then 
     log the updated document to the console. 
    */
+  Listing.findOneAndUpdate({ username: 'starlord55' }, { username: 'starlord88' }, function(err, listing) {
+    if (err) throw err;
+
+  // we have the updated user returned to us
+    console.log(listing);
+  });
 };
 var retrieveAllListings = function() {
   /* 
     Retrieve all listings in the database, and log them to the console. 
    *////
+   process.exit();
 };
 
 findLibraryWest();
