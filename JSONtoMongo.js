@@ -19,9 +19,11 @@ mongoose.connect('mongodb://test:1234@ds123084.mlab.com:23084/learning_mongo');
  fs.readFile('listings.json', 'utf8', function (err, data){
   var listings = JSON.parse(data);
   for(var i in listings){
-    
+    var newListing = new Listing({
+      name: listings[i].name;
+    })
 
-    db.listings.insert(listing[i]);
+    
   };
  });
 
