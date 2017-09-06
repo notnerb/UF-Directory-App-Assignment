@@ -1,6 +1,8 @@
 /* Import mongoose and define any variables needed to create the schema */
 var mongoose = require('mongoose'), 
     Schema = mongoose.Schema;
+mongoose.connect('mongodb://<notnerb>:<102694>@ds123084.mlab.com:23084/learning_mongo');
+
 
 /* Create your schema */
 var listingSchema = new Schema({
