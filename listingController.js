@@ -6,6 +6,7 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
     $scope.newItem = "";
     $scope.newItemCode = "";
     $scope.searchTerm = "";
+    $scope.newItemAddr ="";
 
     /* 
       Implement these functions in the controller to make your application function 
@@ -15,7 +16,7 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
       console.log("in add");
       if ($scope.newItem !== ""){
 
-        $scope.listings.push({"name" : $scope.newItem, "code" : $scope.newItemCode})
+        $scope.listings.push({"name" : $scope.newItem, "code" : $scope.newItemCode, "address" : $scope.newItemAddr})
       }
     };
     $scope.deleteListing = function(index) {

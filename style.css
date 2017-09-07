@@ -6,3 +6,15 @@
   max-height: 400px;
   overflow: auto;
 }
+
+.input-group{
+	position: absolute;
+	left: 600px;
+	top: 0px;
+}
+
+.jumbotron{
+	position: absolute;
+	left: 600px;
+	top:100px;
+}

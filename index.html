@@ -19,7 +19,7 @@
              -->
             
             
-            <span class="input-group-addon"><span class="glyphicon glyphicon-search"></span></span>
+           
             
             <input type="text" class="form-control" placeholder="Search" ng-model="searchTerm">
             
@@ -29,7 +29,7 @@
               <tr>
                 <th>Code</th>
                 <th>Building Name</th>
-                <th>wooo</th>
+                
               </tr>
               <tr ng-repeat = "listing in listings|filter:{name: searchTerm}" ng-click = "showDetails($index)">
               <td>{{listing.code}}</td>
@@ -48,10 +48,11 @@
 
                 --> 
             </table>
-            <br>
+            
        <div class = "input-group">
           <input type="text" class="form-control" placeholder="Name to add to listing" ng-model="newItem">
           <input type="text" class="form-control" placeholder="Code to add to listing" ng-model="newItemCode">
+          <input type="text" class="form-control" placeholder="Address to add to listing" ng-model="newItemAddr">
           <span class="input-group-btn">
             <button class="btn btn-default" type="button" ng-click="addListing()">
               Add
@@ -60,7 +61,7 @@
           </span>
         </div><!-- /input-group -->
 
-        <div class="col-md-6">
+        
           <div class="jumbotron">
             <h2>Detailed Information</h2>
             <div class = "moreDetails" ng-show = "showInfo">
@@ -76,7 +77,7 @@
                -->
              </div>
           </div>
-        </div>
+        
       </div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
